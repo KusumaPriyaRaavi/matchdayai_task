@@ -17,7 +17,7 @@ class MenuScreen extends StatelessWidget {
               radius: 50.0,
               backgroundImage: ExactAssetImage('assets/images/profile.png'),
             ),
-            InkWell(
+            GestureDetector(
               onTap: () {},
               child: CommonWidgets(
                 child: const Icon(Icons.home),
@@ -30,7 +30,7 @@ class MenuScreen extends StatelessWidget {
                 ),
               ),
             ),
-            InkWell(
+            GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
@@ -50,7 +50,7 @@ class MenuScreen extends StatelessWidget {
                 ),
               ),
             ),
-            InkWell(
+            GestureDetector(
               onTap: () {},
               child: CommonWidgets(
                 child: const Icon(Icons.home),
