@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:matchdayai_task/common_utils/common_widgets.dart';
 import 'package:matchdayai_task/screens/menu_screen.dart';
+import 'package:card_swiper/card_swiper.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -38,12 +40,13 @@ class HomeScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 30.0, vertical: 40.0),
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 40.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  height: 700,
+                  height: 500,
+                  width: MediaQuery.of(context).size.width * 10,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       border: Border.all(color: Colors.grey)),
@@ -51,22 +54,22 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           Container(
                             decoration:
-                                const BoxDecoration(color: Colors.blueAccent),
-                            height: 80.0,
-                            width: 15.0,
+                                const BoxDecoration(color: Color(0xFF21294C)),
+                            height: 50.0,
+                            width: 10.0,
                           ),
                           const SizedBox(
                             width: 20.0,
+                            height: 0.0,
                           ),
                           const Text('MY PROFILE')
                         ],
                       ),
                       const Divider(
-                        height: 15.0,
+                        height: 0.0,
                         thickness: 2.0,
                       ),
                       Padding(
@@ -144,8 +147,8 @@ class HomeScreen extends StatelessWidget {
                             height: 70,
                             width: 90,
                             decoration: BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.circular(2.0),
+                              color: const Color(0xFFECF0FA),
+                              borderRadius: BorderRadius.circular(5.0),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -166,8 +169,9 @@ class HomeScreen extends StatelessWidget {
                                     Text(
                                       'SUPER STAR',
                                       style: TextStyle(
-                                          fontSize: 10.0,
-                                          color: Colors.yellowAccent),
+                                        fontSize: 10.0,
+                                        color: Color(0xFFD49C1D),
+                                      ),
                                     ),
                                     Text(
                                       'LEVEL 7',
@@ -322,13 +326,251 @@ class HomeScreen extends StatelessWidget {
                               text: const Text('Losses'),
                               count: const Text(
                                 '10',
-                                style: TextStyle(color: Colors.red),
+                                style: TextStyle(
+                                  color: Color(0xFFAB0738),
+                                ),
                               ),
                             ),
                           ],
                         ),
                       ),
                     ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                Container(
+                  height: 218,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Colors.grey)),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            decoration:
+                                const BoxDecoration(color: Color(0xFF21294C)),
+                            height: 35.0,
+                            width: 10.0,
+                          ),
+                          const SizedBox(
+                            width: 20.0,
+                            height: 0.0,
+                          ),
+                          const Text('MY ACADEMY'),
+                          const SizedBox(
+                            width: 100.0,
+                            height: 0.0,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(3.0),
+                              border: Border.all(
+                                color: const Color(0xFF48B499),
+                              ),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 5.0),
+                              child: Text('View Matches'),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Divider(
+                        height: 1.0,
+                        thickness: 2.0,
+                      ),
+                      Container(
+                        height: 180.0,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.zero,
+                            topRight: Radius.zero,
+                            bottomLeft: Radius.circular(3.0),
+                            bottomRight: Radius.circular(3.0),
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/blackbg.png"),
+                            fit: BoxFit.fill,
+                          ),
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [Colors.blue, Colors.purple]),
+                        ),
+                        child: Swiper(
+                          itemCount: 4,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              child: const SwipeImage(),
+                            );
+                          },
+                          pagination: const SwiperPagination(),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                Container(
+                  height: 218,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Colors.grey)),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            decoration:
+                                const BoxDecoration(color: Color(0xFF21294C)),
+                            height: 35.0,
+                            width: 10.0,
+                          ),
+                          const SizedBox(
+                            width: 20.0,
+                            height: 0.0,
+                          ),
+                          const Text('MY ACADEMY'),
+                          const SizedBox(
+                            width: 100.0,
+                            height: 0.0,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(3.0),
+                              border: Border.all(
+                                color: const Color(0xFF48B499),
+                              ),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 5.0),
+                              child: Text('View Academy'),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Divider(
+                        height: 1.0,
+                        thickness: 2.0,
+                      ),
+                      Container(
+                        height: 180.0,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.zero,
+                            topRight: Radius.zero,
+                            bottomLeft: Radius.circular(3.0),
+                            bottomRight: Radius.circular(3.0),
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/blackbg.png"),
+                            fit: BoxFit.fill,
+                          ),
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [Colors.blue, Colors.purple]),
+                        ),
+                        child: Swiper(
+                          itemCount: 4,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              child: const SwipeImage(),
+                            );
+                          },
+                          pagination: const SwiperPagination(),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 50.0,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  color: const Color(0xFF21294C),
+                  height: 200.0,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 20.0,
+                      right: 20.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Image.asset('assets/images/mark.png'),
+                            const SizedBox(width: 10.0),
+                            const Text(
+                              'MATCHDAY.AI',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        const Text(
+                          'AI enabled intelligence',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            const Icon(
+                              Icons.email,
+                              color: Colors.white,
+                            ),
+                            IconButton(
+                              icon: const FaIcon(
+                                FontAwesomeIcons.instagramSquare,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {},
+                            ),
+                            IconButton(
+                              icon: const FaIcon(
+                                FontAwesomeIcons.twitter,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {},
+                            ),
+                            const Icon(
+                              Icons.facebook,
+                              color: Colors.white,
+                            ),
+                            IconButton(
+                              icon: const FaIcon(
+                                FontAwesomeIcons.linkedin,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                        const Text(
+                          'Copyright | FAQ | Privacy Policy  | Terms of Services',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13.0,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
